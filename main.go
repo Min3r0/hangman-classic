@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"hangman-classic/CreateList"
 	"hangman-classic/Print"
 	"hangman-classic/RequestUsr"
@@ -43,22 +44,27 @@ func main() {
 			print("il vous reste, ", 9-IndexOfDeath, " essai.")
 			print("\n")
 			Print.DrawHangman(LineHangman, HangmanList)
-			Print.PrintDashList(DashList)
-			print("\n[")
-			print(StringLetterUsed)
-			print("]\n")
+			print("\n")
+			fmt.Println("[", StringLetterUsed, "]")
 			if Verify.VerifOneTap(letter, ListWordCap) {
 				IndexOfDeath = 10
+				print(letter)
+				print("\n")
 				CreateList.AddLettreInDashList(letter, DashList, IndexLetter)
 				print("GG, you're the best player i've ever seen, WOW!")
+			} else if Verify.VerifWon(DashList) {
+				CreateList.AddLettreInDashList(letter, DashList, IndexLetter)
+				Print.PrintDashList(DashList)
+				print("\n")
+				print("GG, You Win")
+				IndexOfDeath = 10
+			} else {
+				Print.PrintDashList(DashList)
+				print("\n")
 			}
 		} else {
 			IndexOfDeath = 10
+			print("You Loose")
 		}
-	}
-	if Verify.VerifWon(DashList) {
-		print("GG, You Win")
-	} else {
-		print("You Loose")
 	}
 }
