@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func AskLetter() string {
+func AskLetter() string { // Fonction qui demande à l'utilisateur une lettre
 	scanner := bufio.NewScanner(os.Stdin) // création du scanner capturant une entrée utilisateur
 	print("Choose: ")
 	scanner.Scan()           //lancement du scanner
