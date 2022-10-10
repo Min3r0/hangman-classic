@@ -50,7 +50,6 @@ func main() {
 				IndexOfDeath = 10
 				print(letter)
 				print("\n")
-				CreateList.AddLettreInDashList(letter, DashList, IndexLetter)
 				print("GG, you're the best player i've ever seen, WOW!")
 			} else if Verify.VerifWon(DashList) {
 				CreateList.AddLettreInDashList(letter, DashList, IndexLetter)
