@@ -10,5 +10,6 @@ func VerifOneTap(letter string, ListWordCap []string) bool {
 			}
 		}
 	}
+	print("\n")
 	return false
 }
