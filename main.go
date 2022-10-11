@@ -29,10 +29,10 @@ func main() {
 	print("\n")
 	for IndexOfDeath < 9 {
 		if Verify.VerifWon(DashList) == false {
-			letter := RequestUsr.AskLetter()
-			for Verify.VerifUsedLetter(letter, ListLetterUsed) == 1 || letter == "0" {
+			letter := RequestUsr.AskLetter(ListLetterUsed)
+			for letter == "0" {
 				ListLetterUsed = append(ListLetterUsed, letter)
-				letter = RequestUsr.AskLetter()
+				letter = RequestUsr.AskLetter(ListLetterUsed)
 			}
 			StringLetterUsed = Print.UsedLetter(letter, StringLetterUsed)
 			IndexLetter := Verify.VerifyLetter(letter, ListWordCap)
@@ -45,8 +45,7 @@ func main() {
 			} else {
 				CreateList.AddLettreInDashList(letter, DashList, IndexLetter)
 			}
-			print("il vous reste, ", 9-IndexOfDeath, " essai.")
-			print("\n")
+			fmt.Println("il vous reste, ", 9-IndexOfDeath, " essai.")
 			Print.DrawHangman(LineHangman, HangmanList)
 			print("\n")
 			fmt.Println("[", StringLetterUsed, "]")
