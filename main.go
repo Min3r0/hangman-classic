@@ -30,9 +30,10 @@ func main() {
 	for IndexOfDeath < 9 {
 		if Verify.VerifWon(DashList) == false {
 			letter := RequestUsr.AskLetter(ListLetterUsed)
+			ListLetterUsed = append(ListLetterUsed, letter)
 			for letter == "0" {
-				ListLetterUsed = append(ListLetterUsed, letter)
 				letter = RequestUsr.AskLetter(ListLetterUsed)
+				ListLetterUsed = append(ListLetterUsed, letter)
 			}
 			StringLetterUsed = Print.UsedLetter(letter, StringLetterUsed)
 			IndexLetter := Verify.VerifyLetter(letter, ListWordCap)
