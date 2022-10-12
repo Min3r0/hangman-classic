@@ -11,10 +11,9 @@ func CreateASCIIWordList(message string, ListASCII []string, CharList []string) 
 			}
 		}
 	}
-	for i := 0; i > 9; i++ {
-		for j := range index {
-			WordASCII[i] += ListASCII[2+((9*index[j])+i)]
-			WordASCII[i] += "/"
+	for x := 0; x < 7; x++ {
+		for y := 0; y < len(index); y++ {
+			WordASCII[x] += ListASCII[1+((9*index[y])+x)]
 		}
 	}
 	return WordASCII
