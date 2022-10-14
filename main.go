@@ -63,7 +63,7 @@ func main() {
 				print(letter)
 				print("\n")
 				CreateList.AddLettreInDashList(letter, DashList, IndexLetter)
-				message := "GG, you're the best player I've ever seen, WOW!"
+				message := "GG, you're the best player I've ever seen!"
 				ListWordASCII := CreateList.CreateASCIIWordList(message, ListASCII, CharList)
 				Print.PrintASCII(ListWordASCII)
 				//print("GG, you're the best player i've ever seen, WOW!")
@@ -82,7 +82,7 @@ func main() {
 			}
 		} else {
 			IndexOfDeath = 10
-			message := "You win"
+			message := "You Loose"
 			ListWordASCII := CreateList.CreateASCIIWordList(message, ListASCII, CharList)
 			Print.PrintASCII(ListWordASCII)
 			//print("You Loose")
