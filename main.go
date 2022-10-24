@@ -1,20 +1,20 @@
 package main
 
 import (
-	"flag"
 	"hangman-classic/CreateList"
 	"hangman-classic/Game"
 	"hangman-classic/RequestUsr"
 	"hangman-classic/StartAndStop"
 )
 
-func init() {
-	const (
-		Save  = "Save.txt"
-		usage = "init du jeu"
-	)
-	flag.String("SaveType", Save, usage)
-}
+//func init() {
+//const (
+//	Save  = CreateList.ReadFile("save.txt")
+//	usage = "love you"
+//)
+//var x *string
+//x = flag.String( "StartWith", Save, usage)
+//}
 
 func main() {
 	if len(CreateList.ReadFile("save.txt")) >= 1 {
