@@ -8,12 +8,13 @@ import (
 	"os"
 )
 
-func Stop(LineHangman int, ListLetterUsed []string, DashList []string, IndexOfDeath int) {
+func Stop(LineHangman int, ListLetterUsed []string, DashList []string, IndexOfDeath int, ListWordCap []string) {
 	data := Structure.Hangman{
 		LineHangman:    LineHangman,
 		ListLetterUsed: ListLetterUsed,
 		DashList:       DashList,
-		IndexOfDeath:   IndexOfDeath}
+		IndexOfDeath:   IndexOfDeath,
+		ListWordCap:    ListWordCap}
 	Data, err := json.Marshal(data)
 	if err != nil {
 		fmt.Println(err)

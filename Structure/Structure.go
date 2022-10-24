@@ -5,4 +5,5 @@ type Hangman struct {
 	ListLetterUsed []string
 	DashList       []string
 	IndexOfDeath   int
+	ListWordCap    []string
 }
