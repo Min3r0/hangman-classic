@@ -1,12 +1,22 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"hangman-classic/CreateList"
 	"hangman-classic/Print"
 	"hangman-classic/RequestUsr"
+	"hangman-classic/StartAndStop"
 	"hangman-classic/Verify"
 )
+
+func init() {
+	const (
+		Save  = "Save.txt"
+		usage = "init du jeu"
+	)
+	flag.String("SaveType", Save, usage)
+}
 
 func main() {
 	var StringLetterUsed string
@@ -31,9 +41,17 @@ func main() {
 		if Verify.VerifWon(DashList) == false {
 			letter := RequestUsr.AskLetter(ListLetterUsed)
 			ListLetterUsed = append(ListLetterUsed, letter)
+			stillplaying := true
 			for letter == "0" {
 				letter = RequestUsr.AskLetter(ListLetterUsed)
 				ListLetterUsed = append(ListLetterUsed, letter)
+			}
+			if letter == "STOP" {
+				StartAndStop.Stop(LineHangman, ListLetterUsed, DashList, IndexOfDeath)
+				stillplaying = false
+			}
+			if !stillplaying {
+				break
 			}
 			StringLetterUsed = Print.UsedLetter(letter, StringLetterUsed)
 			IndexLetter := Verify.VerifyLetter(letter, ListWordCap)
@@ -44,7 +62,7 @@ func main() {
 				LineHangman = LineHangman + 16
 				IndexOfDeath += 2
 			} else {
-				CreateList.AddLettreInDashList(letter, DashList, IndexLetter)
+				DashList = CreateList.AddLettreInDashList(letter, DashList, IndexLetter)
 			}
 			fmt.Println("il vous reste, ", 9-IndexOfDeath, " essai.")
 			Print.DrawHangman(LineHangman, HangmanList)
@@ -56,7 +74,7 @@ func main() {
 				print("\n")
 				print("GG, you're the best player i've ever seen, WOW!")
 			} else if Verify.VerifWon(DashList) {
-				CreateList.AddLettreInDashList(letter, DashList, IndexLetter)
+				DashList = CreateList.AddLettreInDashList(letter, DashList, IndexLetter)
 				Print.PrintDashList(DashList)
 				print("\n")
 				print("GG, You Win")

@@ -1,0 +1,1 @@
+{"LineHangman":8,"ListLetterUsed":["T","A","E","R","STOP"],"DashList":["E","_","T","R","E","E"],"IndexOfDeath":1}
