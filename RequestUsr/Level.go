@@ -6,11 +6,12 @@ import (
 )
 
 func Level(save bool) string { //Fonction qui demande le niveau de difficulté
-	scanner := bufio.NewScanner(os.Stdin) // Création du scanner capturant une entrée utilisateur
-	scanner.Scan()                        // Lancement du scanner
-	lv := scanner.Text()                  // Stockage du résultat du scanner dans une variable
+	// Stockage du résultat du scanner dans une variable
 	if save == true {
 		print("You can continue (Continue) or Choose your level (Easy, Medium, Hard):\n")
+		scanner := bufio.NewScanner(os.Stdin) // Création du scanner capturant une entrée utilisateur
+		scanner.Scan()                        // Lancement du scanner
+		lv := scanner.Text()
 		if lv == "Easy" {
 			return "words.txt"
 		} else if lv == "Medium" {
@@ -25,6 +26,9 @@ func Level(save bool) string { //Fonction qui demande le niveau de difficulté
 		}
 	} else {
 		print("Choose your level (Easy, Medium, Hard):\n")
+		scanner := bufio.NewScanner(os.Stdin) // Création du scanner capturant une entrée utilisateur
+		scanner.Scan()                        // Lancement du scanner
+		lv := scanner.Text()
 		if lv == "Easy" {
 			return "words.txt"
 		} else if lv == "Medium" {

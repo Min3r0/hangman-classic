@@ -13,24 +13,36 @@ func init() {
 		Save  = "Save.txt"
 		usage = "init du jeu"
 	)
-	flag.String("SaveType", Save, usage)
+	flag.String("startWith", Save, usage)
 }
 
 func main() {
 	if len(CreateList.ReadFile("save.txt")) >= 1 {
-		SavedGame := RequestUsr.Level(true)
-		for SavedGame == "" {
-			SavedGame = RequestUsr.Level(true)
+		Level := RequestUsr.Level(true)
+		for Level == "" {
+			Level = RequestUsr.Level(true)
 		}
-		Game.Game(StartAndStop.Start())
+		if Level == "Continue" {
+
+			print(StartAndStop.Start())
+			Game.Game(StartAndStop.Start())
+		} else {
+			var ListLetterUsed []string
+			IndexOfDeath, LineHangman := 0, 0
+			ListWord := CreateList.ReadFile(Level)
+			ListWordCap := CreateList.CreateListWordCap(ListWord[RequestUsr.Random(ListWord)])
+			DashList := CreateList.CreateDashList(ListWordCap)
+			Game.Game(LineHangman, ListLetterUsed, DashList, IndexOfDeath, ListWordCap)
+		}
+
 	} else {
 		var ListLetterUsed []string
 		IndexOfDeath, LineHangman := 0, 0
-		lev := RequestUsr.Level(false)
-		for lev == "" {
-			lev = RequestUsr.Level(false)
+		Level := RequestUsr.Level(false)
+		for Level == "" {
+			Level = RequestUsr.Level(false)
 		}
-		ListWord := CreateList.ReadFile(lev)
+		ListWord := CreateList.ReadFile(Level)
 		ListWordCap := CreateList.CreateListWordCap(ListWord[RequestUsr.Random(ListWord)])
 		DashList := CreateList.CreateDashList(ListWordCap)
 		Game.Game(LineHangman, ListLetterUsed, DashList, IndexOfDeath, ListWordCap)
