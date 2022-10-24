@@ -23,8 +23,6 @@ func main() {
 			Level = RequestUsr.Level(true)
 		}
 		if Level == "Continue" {
-
-			print(StartAndStop.Start())
 			Game.Game(StartAndStop.Start())
 		} else {
 			var ListLetterUsed []string
