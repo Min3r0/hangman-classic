@@ -32,7 +32,6 @@ func main() {
 			DashList := CreateList.CreateDashList(ListWordCap)
 			Game.Game(LineHangman, ListLetterUsed, DashList, IndexOfDeath, ListWordCap)
 		}
-
 	} else {
 		var ListLetterUsed []string
 		IndexOfDeath, LineHangman := 0, 0
