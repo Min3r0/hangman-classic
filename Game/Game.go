@@ -47,6 +47,9 @@ func Game(LineHangman int, ListLetterUsed []string, DashList []string, IndexOfDe
 			} else {
 				CreateList.AddLettreInDashList(letter, DashList, IndexLetter)
 			}
+			if IndexOfDeath == 11 {
+				IndexOfDeath = 10
+			}
 			NbDeathInString := strconv.FormatInt(int64(10-IndexOfDeath), 10)
 			message := "You have " + NbDeathInString + " attempts left"
 			ListWordASCII := CreateList.CreateASCIIWordList(message, ListASCII, CharList)
