@@ -5,11 +5,11 @@ import (
 	"hangman-classic/Print"
 )
 
-func VerifUsedLetter(letter string, ListLetterUsed []string, ListASCII []string, CharList []string) bool { // Fonction qui vérifie si la lettre renter à déjà etait rentrée
+func VerifUsedLetter(Letter string, ListLetterUsed []string, ListASCII []string, CharList []string) bool { // Fonction qui vérifie si la lettre renter à déjà etait rentrée
 	for i := range ListLetterUsed {
-		if letter == ListLetterUsed[i] {
-			message := "You cannot use this letter again!"
-			ListWordASCII := CreateList.CreateASCIIWordList(message, ListASCII, CharList)
+		if Letter == ListLetterUsed[i] {
+			Message := "You cannot use this letter again!"
+			ListWordASCII := CreateList.CreateASCIIWordList(Message, ListASCII, CharList)
 			Print.PrintASCII(ListWordASCII)
 			print("\n")
 			return true

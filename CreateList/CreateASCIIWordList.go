@@ -1,19 +1,19 @@
 package CreateList
 
-func CreateASCIIWordList(message string, ListASCII []string, CharList []string) []string {
+func CreateASCIIWordList(message string, ListASCII []string, CharList []string) []string { //Créer transforme une chaine de charactère en ASCII
 	WordASCII := []string{"", "", "", "", "", "", ""}
-	var index []int
+	var Index []int
 	ListWord := CreateListWord(message)
 	for i := range ListWord {
 		for j := range CharList {
 			if ListWord[i] == CharList[j] {
-				index = append(index, j)
+				Index = append(Index, j)
 			}
 		}
 	}
 	for x := 0; x < 7; x++ {
-		for y := 0; y < len(index); y++ {
-			WordASCII[x] += ListASCII[1+((9*index[y])+x)]
+		for y := 0; y < len(Index); y++ {
+			WordASCII[x] += ListASCII[1+((9*Index[y])+x)]
 		}
 	}
 	return WordASCII

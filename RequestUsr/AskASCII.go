@@ -6,10 +6,10 @@ import (
 )
 
 func AskASCII() string {
-	scanner := bufio.NewScanner(os.Stdin)
+	Scanner := bufio.NewScanner(os.Stdin)
 	print("choose a model of ASCII (Standard, Shadow, Thinkertoy):\n")
-	scanner.Scan()          // Lancement du scanner
-	ASCII := scanner.Text() // Stockage du résultat du scanner dans une variable
+	Scanner.Scan()          // Lancement du Scanner
+	ASCII := Scanner.Text() // Stockage du résultat du Scanner dans une variable
 	if ASCII == "Standard" {
 		return "standard.txt"
 	} else if ASCII == "Shadow" {

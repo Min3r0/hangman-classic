@@ -9,10 +9,10 @@ import (
 )
 
 func AskLetter(ListLetterUsed []string, ListASCII []string, CharList []string) string { // Fonction qui demande à l'utilisateur une lettre
-	scanner := bufio.NewScanner(os.Stdin) // création du scanner capturant une entrée utilisateur
+	Scanner := bufio.NewScanner(os.Stdin) // création du Scanner capturant une entrée utilisateur
 	print("Choose: ")
-	scanner.Scan()           //lancement du scanner
-	Letter := scanner.Text() // stockage du résultat du scanner dans une variable
+	Scanner.Scan()           //lancement du Scanner
+	Letter := Scanner.Text() // stockage du résultat du Scanner dans une variable
 	if Letter < "A" || Letter > "Z" {
 		message := "This character is not capital!"
 		ListWordASCII := CreateList.CreateASCIIWordList(message, ListASCII, CharList)
