@@ -2,10 +2,12 @@ package RequestUsr
 
 import (
 	"bufio"
+	"hangman-classic/CreateList"
+	"hangman-classic/Print"
 	"os"
 )
 
-func Level() string { //Fonction qui demande le niveau de difficulté
+func Level(ListASCII []string, CharList []string) string { //Fonction qui demande le niveau de difficulté
 	scanner := bufio.NewScanner(os.Stdin) // Création du scanner capturant une entrée utilisateur
 	print("Choose your level (Easy, Medium, Hard):\n")
 	scanner.Scan()       // Lancement du scanner
@@ -17,7 +19,11 @@ func Level() string { //Fonction qui demande le niveau de difficulté
 	} else if lv == "Hard" {
 		return "words3.txt"
 	} else {
-		print("Your choice is not valid, try again!\n")
+		message := "Your choice is not valid, try again!"
+		ListWordASCII := CreateList.CreateASCIIWordList(message, ListASCII, CharList)
+		Print.PrintASCII(ListWordASCII)
+		print("\n")
+		//print("Your choice is not valid, try again!\n")
 		return ""
 	}
 }
