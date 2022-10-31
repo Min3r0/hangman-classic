@@ -7,7 +7,6 @@ import (
 )
 
 func main() {
-
 	var ListLetterUsed []string
 	IndexOfDeath, LineHangman := 0, 0
 	Level := RequestUsr.Level()
