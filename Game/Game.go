@@ -12,12 +12,14 @@ import (
 func Game(LineHangman int, ListLetterUsed []string, DashList []string, IndexOfDeath int, ListWordCap []string) {
 	var StringLetterUsed string
 	HangmanList := CreateList.ReadFile("hangman.txt")
-	RandomLetter := CreateList.RandomLetter(ListWordCap)
-	IndexRandomLetter := Verify.VerifyLetter(RandomLetter, ListWordCap)
-	CreateList.AddLettreInDashList(RandomLetter, DashList, IndexRandomLetter)
-	ListLetterUsed = append(ListLetterUsed, RandomLetter)
-	Print.DrawHangman(LineHangman, HangmanList)
-	Print.PrintDashList(DashList)
+	if len(ListLetterUsed) == 0 {
+		RandomLetter := CreateList.RandomLetter(ListWordCap)
+		IndexRandomLetter := Verify.VerifyLetter(RandomLetter, ListWordCap)
+		CreateList.AddLettreInDashList(RandomLetter, DashList, IndexRandomLetter)
+		ListLetterUsed = append(ListLetterUsed, RandomLetter)
+		Print.DrawHangman(LineHangman, HangmanList)
+		Print.PrintDashList(DashList)
+	}
 	print("\n")
 	for IndexOfDeath < 9 {
 		if Verify.VerifWon(DashList) == false {

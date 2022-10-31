@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"hangman-classic/Structure"
-	"io/ioutil"
 	"os"
 )
 
@@ -21,6 +20,6 @@ func Stop(LineHangman int, ListLetterUsed []string, DashList []string, IndexOfDe
 		os.Exit(1)
 	}
 	fmt.Println("Party saved!")
-	ioutil.WriteFile("Save.txt", Data, 0644)
+	os.WriteFile("Save.json", Data, 0644)
 	os.Exit(0)
 }

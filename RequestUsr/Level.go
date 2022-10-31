@@ -18,7 +18,7 @@ func Level(save bool) string { //Fonction qui demande le niveau de difficulté
 		} else if lv == "Hard" {
 			return "words3.txt"
 		} else if lv == "Continue" {
-			return "Save.txt"
+			return "Continue"
 		} else {
 			print("Your choice is not valid, try again!\n")
 			return ""
