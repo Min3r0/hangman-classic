@@ -86,7 +86,7 @@ func main() {
 			}
 		} else {
 			IndexOfDeath = 10
-			message := "You Loose"
+			message := "You Loose "
 			ListWordASCII := CreateList.CreateASCIIWordList(message, ListASCII, CharList)
 			Print.PrintASCII(ListWordASCII)
 			//print("You Loose")
