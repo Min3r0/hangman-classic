@@ -80,5 +80,6 @@ func Game(LineHangman int, ListLetterUsed []string, DashList []string, IndexOfDe
 		message := "You Loose "
 		ListWordASCII := CreateList.CreateASCIIWordList(message, ListASCII, CharList)
 		Print.PrintASCII(ListWordASCII)
+
 	}
 }
