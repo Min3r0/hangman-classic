@@ -14,13 +14,12 @@ func AskLetter(ListLetterUsed []string, ListASCII []string, CharList []string) s
 	scanner.Scan()           //lancement du scanner
 	Letter := scanner.Text() // stockage du résultat du scanner dans une variable
 	if Letter < "A" || Letter > "Z" {
-		message := "This character is not capital, this is not valid!"
+		message := "This character is not capital!"
 		ListWordASCII := CreateList.CreateASCIIWordList(message, ListASCII, CharList)
 		Print.PrintASCII(ListWordASCII)
 		print("\n")
-		//print("this character is not capital, this is not valid! \n")
 		return "0"
-	} else if Verify.VerifUsedLetter(Letter, ListLetterUsed) {
+	} else if Verify.VerifUsedLetter(Letter, ListLetterUsed, ListASCII, CharList) {
 		return "0"
 	} else {
 		return Letter

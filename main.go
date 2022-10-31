@@ -53,7 +53,7 @@ func main() {
 			} else {
 				CreateList.AddLettreInDashList(letter, DashList, IndexLetter)
 			}
-			NbDeathInString := strconv.FormatInt(int64(9-IndexOfDeath), 10)
+			NbDeathInString := strconv.FormatInt(int64(10-IndexOfDeath), 10)
 			message := "you have " + NbDeathInString + " attempts left"
 			ListWordASCII := CreateList.CreateASCIIWordList(message, ListASCII, CharList)
 			Print.PrintASCII(ListWordASCII)
@@ -67,10 +67,9 @@ func main() {
 				print(letter)
 				print("\n")
 				CreateList.AddLettreInDashList(letter, DashList, IndexLetter)
-				message := "GG, you're the best player I've ever seen!"
+				message := "GG,you're the best player I've ever seen!"
 				ListWordASCII := CreateList.CreateASCIIWordList(message, ListASCII, CharList)
 				Print.PrintASCII(ListWordASCII)
-				//print("GG, you're the best player i've ever seen, WOW!")
 			} else if Verify.VerifWon(DashList) {
 				CreateList.AddLettreInDashList(letter, DashList, IndexLetter)
 				Print.PrintDashList(DashList)
