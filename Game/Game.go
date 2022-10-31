@@ -5,6 +5,7 @@ import (
 	"hangman-classic/CreateList"
 	"hangman-classic/Print"
 	"hangman-classic/RequestUsr"
+	"hangman-classic/StartAndStop"
 	"hangman-classic/Verify"
 	"strconv"
 )
@@ -21,11 +22,11 @@ func Game(LineHangman int, ListLetterUsed []string, DashList []string, IndexOfDe
 	print("\n")
 	for IndexOfDeath < 10 {
 		if Verify.VerifWon(DashList) == false {
-			letter := RequestUsr.AskLetter(ListLetterUsed)
+			letter := RequestUsr.AskLetter(ListLetterUsed, ListASCII, CharList)
 			ListLetterUsed = append(ListLetterUsed, letter)
 			StillPlaying := true
 			for letter == "0" {
-				letter = RequestUsr.AskLetter(ListLetterUsed)
+				letter = RequestUsr.AskLetter(ListLetterUsed, ListASCII, CharList)
 				ListLetterUsed = append(ListLetterUsed, letter)
 			}
 			if letter == "STOP" {
@@ -55,14 +56,14 @@ func Game(LineHangman int, ListLetterUsed []string, DashList []string, IndexOfDe
 			print("\n")
 			fmt.Println("[", StringLetterUsed, "]")
 			if Verify.VerifOneTap(letter, ListWordCap) {
-				IndexOfDeath = 10
+				IndexOfDeath = 12
 				println(letter)
 				CreateList.AddLettreInDashList(letter, DashList, IndexLetter)
 				message := "GG, you're the best player !"
 				ListWordASCII := CreateList.CreateASCIIWordList(message, ListASCII, CharList)
 				Print.PrintASCII(ListWordASCII)
 			} else if Verify.VerifWon(DashList) {
-				IndexOfDeath = 10
+				IndexOfDeath = 12
 				CreateList.AddLettreInDashList(letter, DashList, IndexLetter)
 				Print.PrintDashList(DashList)
 				print("\n")
@@ -75,7 +76,7 @@ func Game(LineHangman int, ListLetterUsed []string, DashList []string, IndexOfDe
 			}
 		}
 	}
-	if IndexOfDeath >= 9 && IndexOfDeath <= 10 {
+	if IndexOfDeath >= 9 && IndexOfDeath < 12 {
 		message := "You Loose "
 		ListWordASCII := CreateList.CreateASCIIWordList(message, ListASCII, CharList)
 		Print.PrintASCII(ListWordASCII)

@@ -1,11 +1,9 @@
 package main
 
 import (
-	"fmt"
 	"hangman-classic/CreateList"
-	"hangman-classic/Print"
+	"hangman-classic/Game"
 	"hangman-classic/RequestUsr"
-	"hangman-classic/Verify"
 )
 
 func main() {
