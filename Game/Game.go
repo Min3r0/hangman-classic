@@ -21,11 +21,19 @@ func Game(LineHangman int, ListLetterUsed []string, DashList []string, IndexOfDe
 	print("\n")
 	for IndexOfDeath < 10 {
 		if Verify.VerifWon(DashList) == false {
-			letter := RequestUsr.AskLetter(ListLetterUsed, ListASCII, CharList)
+			letter := RequestUsr.AskLetter(ListLetterUsed)
 			ListLetterUsed = append(ListLetterUsed, letter)
+			StillPlaying := true
 			for letter == "0" {
-				letter = RequestUsr.AskLetter(ListLetterUsed, ListASCII, CharList)
+				letter = RequestUsr.AskLetter(ListLetterUsed)
 				ListLetterUsed = append(ListLetterUsed, letter)
+			}
+			if letter == "STOP" {
+				StartAndStop.Stop(LineHangman, ListLetterUsed, DashList, IndexOfDeath, ListWordCap)
+				StillPlaying = false
+			}
+			if !StillPlaying {
+				break
 			}
 			StringLetterUsed = Print.UsedLetter(letter, StringLetterUsed)
 			IndexLetter := Verify.VerifyLetter(letter, ListWordCap)
