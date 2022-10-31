@@ -12,16 +12,14 @@ import (
 func Game(LineHangman int, ListLetterUsed []string, DashList []string, IndexOfDeath int, ListWordCap []string) {
 	var StringLetterUsed string
 	HangmanList := CreateList.ReadFile("hangman.txt")
-	if len(ListLetterUsed) == 0 {
-		RandomLetter := CreateList.RandomLetter(ListWordCap)
-		IndexRandomLetter := Verify.VerifyLetter(RandomLetter, ListWordCap)
-		CreateList.AddLettreInDashList(RandomLetter, DashList, IndexRandomLetter)
-		ListLetterUsed = append(ListLetterUsed, RandomLetter)
-		Print.DrawHangman(LineHangman, HangmanList)
-		Print.PrintDashList(DashList)
-	}
+	RandomLetter := CreateList.RandomLetter(ListWordCap)
+	IndexRandomLetter := Verify.VerifyLetter(RandomLetter, ListWordCap)
+	CreateList.AddLettreInDashList(RandomLetter, DashList, IndexRandomLetter)
+	ListLetterUsed = append(ListLetterUsed, RandomLetter)
+	Print.DrawHangman(LineHangman, HangmanList)
+	Print.PrintDashList(DashList)
 	print("\n")
-	for IndexOfDeath < 9 {
+	for IndexOfDeath < 10 {
 		if Verify.VerifWon(DashList) == false {
 			letter := RequestUsr.AskLetter(ListLetterUsed)
 			ListLetterUsed = append(ListLetterUsed, letter)
@@ -48,7 +46,7 @@ func Game(LineHangman int, ListLetterUsed []string, DashList []string, IndexOfDe
 			} else {
 				DashList = CreateList.AddLettreInDashList(letter, DashList, IndexLetter)
 			}
-			fmt.Println("il vous reste, ", 9-IndexOfDeath, " essai.")
+			fmt.Println("il vous reste, ", 10-IndexOfDeath, " essai.")
 			Print.DrawHangman(LineHangman, HangmanList)
 			print("\n")
 			fmt.Println("[", StringLetterUsed, "]")
@@ -68,8 +66,8 @@ func Game(LineHangman int, ListLetterUsed []string, DashList []string, IndexOfDe
 				print("\n")
 			}
 		} else {
-			IndexOfDeath = 10
 			print("You Loose")
+			IndexOfDeath = 10
 		}
 	}
 }

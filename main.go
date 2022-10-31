@@ -9,9 +9,9 @@ import (
 func main() {
 	var ListLetterUsed []string
 	IndexOfDeath, LineHangman := 0, 0
-	Level := RequestUsr.Level(true)
+	Level := RequestUsr.Level()
 	for Level == "" {
-		Level = RequestUsr.Level(false)
+		Level = RequestUsr.Level()
 	}
 	ListWord := CreateList.ReadFile(Level)
 	ListWordCap := CreateList.CreateListWordCap(ListWord[RequestUsr.Random(ListWord)])
