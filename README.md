@@ -121,9 +121,9 @@ cas 10:
 ```
 
 A cela nous avons ajouter des features qui sont les suivantes:
-- Le joueur à l'opportunité de mettre des mots si il le souhaite, chaque mauvaises réponses lui fera perdre 2 essais.
+- Le joueur à l'opportunité de mettre des mots si il le souhaite, chaque mauvais mot lui fera perdre 2 essais.
 - Si le joueurs trouve le mots le jeu s'arretera avec un message comme quoi il a gagné.
-- Le joueurs n'aura l'opportunité de rentré le meme mot ou lettre.
+- Le joueurs n'aura pas l'opportunité de rentrer le meme mot ou lettre une seconde fois.
 
 Nous avons ajouté aussi L'ASCII-ART, le joueur aura le choix au début de la partie entre trois different type d'ASCII-ART:
 - Le Standard:
