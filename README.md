@@ -224,7 +224,7 @@ Choose:
 Il est aussi possible d'arreter sa partie et de la sauvegarder pour une prochaine partie.
 Pour cela il vous faudra simplement marquer STOP et la partie s'arretera et un message apparaitra vous disant que celle-ci est sauvegardée.
 
-example:
+exemple:
 ```console
       |
       |
