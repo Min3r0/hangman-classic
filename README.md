@@ -122,8 +122,72 @@ cas 10:
 
 A cela nous avons ajouter des features qui sont les suivantes:
 - Le joueur à l'opportunité de mettre des mots si il le souhaite, chaque mauvais mot lui fera perdre 2 essais.
+```console
+__     __                        _                                             
+\ \   / /                       | |                                   _____  
+ \ \_/ /    ___    _   _        | |__     __ _  __   __   ___        |___  | 
+  \   /    / _ \  | | | |       |  _ \   / _` | \ \ / /  / _ \          / /  
+   | |    | (_) | | |_| |       | | | | | (_| |  \ V /  |  __/         / /  
+   |_|     \___/   \__,_|       |_| |_|  \__,_|   \_/    \___|        /_/   
+                                                                            
+
+  +---+
+      |
+      |
+      |
+      |
+      |
+=========
+[ M, E, R, T, I, F, S,  ]
+_OSSIER
+Choose: GROSSIER
+```
+```console
+__     __                        _                                           
+\ \   / /                       | |                                   ____
+ \ \_/ /    ___    _   _        | |__     __ _  __   __   ___        | ___|
+  \   /    / _ \  | | | |       |  _ \   / _` | \ \ / /  / _ \       |___ \
+   | |    | (_) | | |_| |       | | | | | (_| |  \ V /  |  __/         __) |
+   |_|     \___/   \__,_|       |_| |_|  \__,_|   \_/    \___|       |____/
+
+
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+
+[ M, E, R, T, I, F, S, GROSSIER,  ]
+_OSSIER
+```
+
 - Si le joueurs trouve le mots le jeu s'arretera avec un message comme quoi il a gagné.
+```console
+DOSSIER
+  _____    _____                                                      _           _
+ / ____|  / ____|                                                    (_)         | |
+| |  __  | |  __             _   _    ___    _   _        __      __  _   _ __   | |
+| | |_ | | | |_ |           | | | |  / _ \  | | | |       \ \ /\ / / | | | '_ \  | |
+| |__| | | |__| |  _        | |_| | | (_) | | |_| |        \ V  V /  | | | | | | |_|
+ \_____|  \_____| ( )        \__, |  \___/   \__,_|         \_/\_/   |_| |_| |_| (_)
+                  |/         __/ /
+
+```
 - Le joueurs n'aura pas l'opportunité de rentrer le meme mot ou lettre une seconde fois.
+```console
+Choose: GROSSIER
+__     __                                               _                                                              _           _  
+\ \   / /                                              | |                                              __ _          (_)         | |
+ \ \_/ /    ___    _   _          ___    __ _   _ __   | |_         _   _   ___    ___          __ _   / _` |   __ _   _   _ __   | |
+  \   /    / _ \  | | | |        / __|  / _` | | '_ \  | __|       | | | | / __|  / _ \        / _` | | (_| |  / _` | | | | '_ \  | |
+   | |    | (_) | | |_| |       | (__  | (_| | | | | | \ |_        | |_| | \__ \ |  __/       | (_| |  \__, | | (_| | | | | | | | |_|
+   |_|     \___/   \__,_|        \___|  \__,_| |_| |_|  \__|        \__,_| |___/  \___|        \__,_|   __/ |  \__,_| |_| |_| |_| (_)
+                                                                                                       |___/
+
+Choose:
+```
 
 Nous avons ajouté aussi L'ASCII-ART, le joueur aura le choix au début de la partie entre trois different type d'ASCII-ART:
 - Le Standard:
