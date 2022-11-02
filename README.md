@@ -5,7 +5,6 @@ Il est possible d'essayer des lettres, une mauvaise lettre vous fera perdre 1 es
 
 Hangman s'affichera donc comme cela:
 ```console
-
 cas 1:
 
 
@@ -21,7 +20,8 @@ cas 1:
          
          
 =========
-
+```
+```console
 cas 2:
          
       |  
@@ -30,7 +30,8 @@ cas 2:
       |  
       |  
 =========
-
+```
+```console
 cas 3:
 
   +---+  
@@ -40,7 +41,8 @@ cas 3:
       |  
       |  
 =========
-
+```
+```console
 cas 4:
 
   +---+  
@@ -50,7 +52,8 @@ cas 4:
       |  
       |  
 =========
-
+```
+```console
 cas 5:
 
   +---+  
@@ -60,7 +63,8 @@ cas 5:
       |  
       |  
 =========
-
+```
+```console
 cas 6:
 
   +---+  
@@ -70,7 +74,8 @@ cas 6:
       |  
       |  
 =========
-
+```
+```console
 cas 7:
 
   +---+  
@@ -80,7 +85,8 @@ cas 7:
       |  
       |  
 =========
-
+```
+```console
 cas 8:
 
   +---+  
@@ -90,7 +96,8 @@ cas 8:
       |  
       |  
 =========
-
+```
+```console
 cas 9:
 
   +---+  
@@ -100,7 +107,8 @@ cas 9:
  /    |  
       |  
 =========
-
+```
+```console
 cas 10:
 
   +---+  
