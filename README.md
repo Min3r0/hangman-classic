@@ -5,7 +5,7 @@ Il est possible d'essayer des lettres, une mauvaise lettre vous fera perdre 1 es
 
 Hangman s'affichera donc comme cela:
 ```console
-cas 1:
+essai 1:
 
 
 
@@ -18,7 +18,7 @@ cas 1:
 =========
 ```
 ```console
-cas 2:
+essai 2:
          
       |  
       |  
@@ -28,7 +28,7 @@ cas 2:
 =========
 ```
 ```console
-cas 3:
+essai 3:
 
   +---+  
       |  
@@ -39,40 +39,40 @@ cas 3:
 =========
 ```
 ```console
-cas 4:
-
-  +---+  
-  |   |  
-      |  
-      |  
-      |  
-      |  
-=========
-```
-```console
-cas 5:
+essai 4:
 
   +---+  
   |   |  
-  O   |  
+      |  
       |  
       |  
       |  
 =========
 ```
 ```console
-cas 6:
+essai 5:
 
   +---+  
   |   |  
   O   |  
+      |  
+      |  
+      |  
+=========
+```
+```console
+essai 6:
+
+  +---+  
+  |   |  
+  O   |  
   |   |  
       |  
       |  
 =========
 ```
 ```console
-cas 7:
+essai 7:
 
   +---+  
   |   |  
@@ -83,7 +83,7 @@ cas 7:
 =========
 ```
 ```console
-cas 8:
+essai 8:
 
   +---+  
   |   |  
@@ -94,7 +94,7 @@ cas 8:
 =========
 ```
 ```console
-cas 9:
+essai 9:
 
   +---+  
   |   |  
@@ -105,7 +105,7 @@ cas 9:
 =========
 ```
 ```console
-cas 10:
+essai 10:
 
   +---+  
   |   |  
