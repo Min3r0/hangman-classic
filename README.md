@@ -3,6 +3,18 @@ Voici notre projet Hangman.
 Ce programme effectue le jeu du pendu sur le terminal, vous avez donc 10 essai pour essayer de trouver le bon mot.
 Il est possible d'essayer des lettres, une mauvaise lettre vous fera perdre 1 essai.
 
+Attention! il n'est possible d'écrire que en lettre CAPITALE.
+Si ce n'est pas le cas un message s'affichera disant que cette entrée n'est pas possible:
+```console
+ _______   _       _           _                             _                                _   _             _   _ 
+|__   __| | |     (_)         (_)                           | |                              (_) | |           | | | |
+   | |    | |__    _   ___     _   ___       _ __     ___   | |_        ___    __ _   _ __    _  | |_    __ _  | | | |
+   | |    |  _ \  | | / __|   | | / __|     | '_ \   / _ \  | __|      / __|  / _` | | '_ \  | | | __|  / _` | | | | |
+   | |    | | | | | | \__ \   | | \__ \     | | | | | (_) | \ |_      | (__  | (_| | | |_) | | | \ |_  | (_| | | | |_|
+   |_|    |_| |_| |_| |___/   |_| |___/     |_| |_|  \___/   \__|      \___|  \__,_| | .__/  |_|  \__|  \__,_| |_| (_)
+                                                                                     |_|                              
+```
+
 Hangman s'affichera donc comme cela:
 ```console
 essai 1:
