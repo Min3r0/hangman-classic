@@ -1,248 +1,74 @@
-Voici notre projet Hangman.
+# Hangman Classic
 
-Ce programme effectue le jeu du pendu sur le terminal, vous avez donc 10 essai pour essayer de trouver le bon mot.
-Il est possible d'essayer des lettres, une mauvaise lettre vous fera perdre 1 essai.
+Ce projet est une implémentation du jeu classique du **Pendu** en Go. Il a été réalisé durant ma **première année d'études** dans le cadre d'un projet pédagogique. L'objectif de ce projet était d'apprendre les bases de la programmation en Go, telles que la gestion des fichiers, la structuration d'un programme, et l'organisation en packages.
 
-Attention! il n'est possible d'écrire que en lettre CAPITALE.
-Si ce n'est pas le cas un message s'affichera disant que cette entrée n'est pas possible:
-```console
- _______   _       _           _                             _                                _   _             _   _ 
-|__   __| | |     (_)         (_)                           | |                              (_) | |           | | | |
-   | |    | |__    _   ___     _   ___       _ __     ___   | |_        ___    __ _   _ __    _  | |_    __ _  | | | |
-   | |    |  _ \  | | / __|   | | / __|     | '_ \   / _ \  | __|      / __|  / _` | | '_ \  | | | __|  / _` | | | | |
-   | |    | | | | | | \__ \   | | \__ \     | | | | | (_) | \ |_      | (__  | (_| | | |_) | | | \ |_  | (_| | | | |_|
-   |_|    |_| |_| |_| |___/   |_| |___/     |_| |_|  \___/   \__|      \___|  \__,_| | .__/  |_|  \__|  \__,_| |_| (_)
-                                                                                     |_|                              
-```
+## Description
 
-Hangman s'affichera donc comme cela:
-```console
-essai 1:
+Le jeu propose au joueur de découvrir un mot en devinant des lettres une à une, tout en représentant visuellement le bonhomme "pendu" dans le terminal. Le projet met en œuvre les concepts suivants :
 
+- Manipulation des fichiers texte pour charger des mots et différentes polices d'ASCII art.
+- Organisation structurée en packages pour une gestion claire des fonctionnalités.
+- Interactions dynamiques avec l'utilisateur via un terminal.
+- Fonctionnalité permettant de sauvegarder l'état de la partie.
 
+## Fonctionnalités
 
+- **Gestion de la difficulté** : trois niveaux différents (facile, moyen, difficile) avec des listes de mots spécifiques.
+- **Personnalisation visuelle** : trois styles d'ASCII art disponibles (`Standard`, `Shadow`, `Thinkertoy`).
+- **Affichage d'un pendu dynamique** : le pendu évolue en fonction des erreurs dans les tentatives.
+- **Sauvegarde et restauration** : possibilité de sauvegarder une partie en cours pour la reprendre ultérieurement.
+- **Validations des entrées utilisateur** : empêche la saisie de caractères déjà utilisés et vérifie la validité des lettres saisies.
 
-         
-         
+## Comment jouer ?
 
-         
-         
-=========
-```
-```console
-essai 2:
-         
-      |  
-      |  
-      |  
-      |  
-      |  
-=========
-```
-```console
-essai 3:
+1. Clonez le projet :
+   ```bash
+   git clone https://github.com/Min3r0/hangman-classic.git
+   cd hangman-classic
+   ```
 
-  +---+  
-      |  
-      |  
-      |  
-      |  
-      |  
-=========
-```
-```console
-essai 4:
+2. Installez les dépendances avec Go Modules :
+   ```bash
+   go mod tidy
+   ```
 
-  +---+  
-  |   |  
-      |  
-      |  
-      |  
-      |  
-=========
-```
-```console
-essai 5:
+3. Exécutez le jeu via la commande suivante :
+   ```bash
+   go run main.go
+   ```
 
-  +---+  
-  |   |  
-  O   |  
-      |  
-      |  
-      |  
-=========
-```
-```console
-essai 6:
-
-  +---+  
-  |   |  
-  O   |  
-  |   |  
-      |  
-      |  
-=========
-```
-```console
-essai 7:
-
-  +---+  
-  |   |  
-  O   |  
- /|   |  
-      |  
-      |  
-=========
-```
-```console
-essai 8:
-
-  +---+  
-  |   |  
-  O   |  
- /|\  |  
-      |  
-      |  
-=========
-```
-```console
-essai 9:
-
-  +---+  
-  |   |  
-  O   |  
- /|\  |  
- /    |  
-      |  
-=========
-```
-```console
-essai 10:
-
-  +---+  
-  |   |  
-  O   |  
- /|\  |  
- / \  |  
-      |  
-=========
-```
-Nous avons ajouté aussi L'ASCII-ART, le joueur aura le choix au début de la partie entre trois different type d'ASCII-ART:
-- Le Standard:
-```console
-__     __                        _                                           
-\ \   / /                       | |                                    ___   
- \ \_/ /    ___    _   _        | |__     __ _  __   __   ___         ( _ )  
-  \   /    / _ \  | | | |       |  _ \   / _` | \ \ / /  / _ \        / _ \  
-   | |    | (_) | | |_| |       | | | | | (_| |  \ V /  |  __/       | (_) | 
-   |_|     \___/   \__,_|       |_| |_|  \__,_|   \_/    \___|        \___/   
-                                                                             
-```
-
-- Le Shadow:
-```console
-
-_|      _|                         _|                                            _|_|   
-  _|  _|     _|_|   _|    _|       _|_|_|     _|_|_| _|      _|   _|_|         _|    _| 
-    _|     _|    _| _|    _|       _|    _| _|    _| _|      _| _|_|_|_|         _|_|   
-    _|     _|    _| _|    _|       _|    _| _|    _|   _|  _|   _|             _|    _| 
-    _|       _|_|     _|_|_|       _|    _|   _|_|_|     _|       _|_|_|         _|_|   
-```
-
-- Le Thinkertoy:
-```console
-
-o   o                o                          o-o  
- \ /                 |                         |   | 
-  O   o-o o  o       O--o  oo  o   o o-o        o-o  
-  |   | | |  |       |  | | |   \ /  |-'       |   | 
-  o   o-o o--o       o  o o-o-   o   o-o        o-o  
-
-```
-
-A cela nous avons ajouter des features qui sont les suivantes:
-- Le joueur à l'opportunité de mettre des mots si il le souhaite, chaque mauvais mot lui fera perdre 2 essais.
-```console
-__     __                        _                                             
-\ \   / /                       | |                                   _____  
- \ \_/ /    ___    _   _        | |__     __ _  __   __   ___        |___  | 
-  \   /    / _ \  | | | |       |  _ \   / _` | \ \ / /  / _ \          / /  
-   | |    | (_) | | |_| |       | | | | | (_| |  \ V /  |  __/         / /  
-   |_|     \___/   \__,_|       |_| |_|  \__,_|   \_/    \___|        /_/   
-                                                                            
-
-  +---+
-      |
-      |
-      |
-      |
-      |
-=========
-[ M, E, R, T, I, F, S,  ]
-_OSSIER
-Choose: GROSSIER
-```
-```console
-__     __                        _                                           
-\ \   / /                       | |                                   ____
- \ \_/ /    ___    _   _        | |__     __ _  __   __   ___        | ___|
-  \   /    / _ \  | | | |       |  _ \   / _` | \ \ / /  / _ \       |___ \
-   | |    | (_) | | |_| |       | | | | | (_| |  \ V /  |  __/         __) |
-   |_|     \___/   \__,_|       |_| |_|  \__,_|   \_/    \___|       |____/
+4. Suivez les instructions affichées dans le terminal pour jouer. Bonne chance !
 
 
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
 
-[ M, E, R, T, I, F, S, GROSSIER,  ]
-_OSSIER
-```
+## Organisation du projet
 
-- Si le joueurs trouve le mots le jeu s'arretera avec un message comme quoi il a gagné.
-```console
-DOSSIER
-  _____    _____                                                      _           _
- / ____|  / ____|                                                    (_)         | |
-| |  __  | |  __             _   _    ___    _   _        __      __  _   _ __   | |
-| | |_ | | | |_ |           | | | |  / _ \  | | | |       \ \ /\ / / | | | '_ \  | |
-| |__| | | |__| |  _        | |_| | | (_) | | |_| |        \ V  V /  | | | | | | |_|
- \_____|  \_____| ( )        \__, |  \___/   \__,_|         \_/\_/   |_| |_| |_| (_)
-                  |/         __/ /
+Le projet est organisé en plusieurs packages pour maximiser la clarté et la modularité du code :
 
-```
-- Le joueurs n'aura pas l'opportunité de rentrer le meme mot ou lettre une seconde fois.
-```console
-Choose: GROSSIER
-__     __                                               _                                                              _           _  
-\ \   / /                                              | |                                              __ _          (_)         | |
- \ \_/ /    ___    _   _          ___    __ _   _ __   | |_         _   _   ___    ___          __ _   / _` |   __ _   _   _ __   | |
-  \   /    / _ \  | | | |        / __|  / _` | | '_ \  | __|       | | | | / __|  / _ \        / _` | | (_| |  / _` | | | | '_ \  | |
-   | |    | (_) | | |_| |       | (__  | (_| | | | | | \ |_        | |_| | \__ \ |  __/       | (_| |  \__, | | (_| | | | | | | | |_|
-   |_|     \___/   \__,_|        \___|  \__,_| |_| |_|  \__|        \__,_| |___/  \___|        \__,_|   __/ |  \__,_| |_| |_| |_| (_)
-                                                                                                       |___/
+- **`Game`** : Gère la logique du jeu et les interactions utilisateur.
+- **`Print`** : Contient tout l'affichage, notamment le mot masqué, le pendu ASCII et les lettres utilisées.
+- **`Verify`** : Contient les fonctions de vérification (lettres valides, conditions de victoire, etc.).
+- **`RequestUsr`** : Permet de gérer les entrées utilisateur (choix du niveau, lettres, etc.).
+- **`CreateList`** : Manipule les listes utilisées dans le jeu (génération des mots à deviner, etc.).
+- **`StartAndStop`** : Implémente les fonctionnalités de sauvegarde et d'arrêt du jeu.
+- **`Structure`** : Déclare les structures de données spécifiques au jeu.
 
-Choose:
-```
+## Notes pédagogiques
 
-Il est aussi possible d'arreter sa partie et de la sauvegarder pour une prochaine partie.
-Pour cela il vous faudra simplement marquer STOP et la partie s'arretera et un message apparaitra vous disant que celle-ci est sauvegardée.
+Ce projet a été réalisé dans le cadre d’un projet de cours pour apprendre :
 
-exemple:
-```console
-      |
-      |
-      |
-      |
-      |
-=========
+- L'organisation d’un projet en packages.
+- La manipulation des entrées/sorties en Go.
+- L'ASCII art pour des affichages dynamiques et interactifs.
+- Les principes de base de la gestion d'état d'un programme.
 
-[ MAC,  ]
-__R__
-Choose: STOP
-Party saved!
-```
+## Améliorations possibles
+
+- Intégrer une interface graphique pour une expérience plus immersive.
+- Ajouter un mode multijoueur avec suivi des scores.
+- Permettre la gestion de plusieurs langues pour les mots.
+- Implémenter un système d’aide permettant de révéler une lettre.
+
+
+---
+Créé par Romain AUGÉ
